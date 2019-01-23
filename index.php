@@ -1,4 +1,10 @@
 <?php
 
+$app = \Illuminate\Container\Container::getInstance();
 
-echo 1;
+$provider = new \LaWeChat\WeChatServiceProvider($app);
+$provider->register();
+$provider->boot();
+
+
+$a = $app->make('wechat.manager');
