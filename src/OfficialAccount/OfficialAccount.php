@@ -1,5 +1,5 @@
 <?php
-namespace LaWeChat\OfficialAccount;
+namespace Lawechat\OfficialAccount;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
