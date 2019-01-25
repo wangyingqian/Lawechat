@@ -1,5 +1,5 @@
 <?php
-namespace Lawechat;
+namespace LaWeChat;
 
 use Illuminate\Support\ServiceProvider;
 

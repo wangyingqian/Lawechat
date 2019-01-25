@@ -48,7 +48,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Lawechat\\": "src/"
+      "LaWeChat\\": "src/"
     }
   },
   "autoload-dev": {
