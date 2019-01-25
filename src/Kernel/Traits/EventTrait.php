@@ -1,5 +1,5 @@
 <?php
-namespace LaWeChat\Kerner\Traits;
+namespace Lawechat\Kerner\Traits;
 
 trait EventTrait
 {

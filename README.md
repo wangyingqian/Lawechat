@@ -1,2 +1,2 @@
-# LaWeChat
+# Lawechat
 wechat for laravel

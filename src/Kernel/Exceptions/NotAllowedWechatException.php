@@ -1,5 +1,5 @@
 <?php
-namespace LaWeChat\Kerner\Exception;
+namespace Lawechat\Kerner\Exception;
 
 class NotAllowedWechatException extends \RuntimeException
 {

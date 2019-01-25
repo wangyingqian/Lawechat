@@ -1,9 +1,9 @@
 <?php
-namespace LaWeChat;
+namespace Lawechat;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
-use LaWeChat\OfficialAccount\OfficialAccount;
+use Lawechat\OfficialAccount\OfficialAccount;
 
 class WeChatManager
 {
