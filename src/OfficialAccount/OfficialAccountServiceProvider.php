@@ -9,8 +9,8 @@ class OfficialAccountServiceProvider implements ProviderServiceInterface
 {
     public function register(WeChatManager $manager)
     {
-        $manager['official_account'] = function ($app, $dispatcher){
-            return new OfficialAccount($app, $dispatcher);
+        $manager['official_account'] = function ($config, $app, $dispatcher){
+            return new OfficialAccount($config, $app, $dispatcher);
         };
     }
 }

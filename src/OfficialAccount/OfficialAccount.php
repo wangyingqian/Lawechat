@@ -8,18 +8,21 @@ use Illuminate\Support\Manager;
 
 class OfficialAccount extends Manager
 {
+    protected $config;
+
     protected $app;
 
     protected $dispatcher;
 
-    public function __construct(Application $app, Dispatcher $dispatcher)
+    public function __construct($config, Application $app, Dispatcher $dispatcher)
     {
+        $this->config = $config;
         $this->app = $app;
         $this->dispatcher = $dispatcher;
 
         parent::__construct($this->app);
 
-        dd(124);
+        dd($this->config);
     }
 
     public function getDefaultDriver()

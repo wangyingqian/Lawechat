@@ -13,6 +13,8 @@ class WeChat
             self::$manager = Container::getInstance()->make('wechat.manager');
         }
 
+        self::$manager->setConfig($config);
+
         return self::$manager->$name;
     }
 

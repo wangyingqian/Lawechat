@@ -13,6 +13,8 @@ class WeChatManager extends ArrayAccessAble
 
     protected $dispatcher;
 
+    protected $config;
+
 
     public function __construct(Application $app, Dispatcher $dispatcher)
     {
@@ -33,7 +35,7 @@ class WeChatManager extends ArrayAccessAble
 
         $provider = $this->offsetGet($name);
 
-        return $provider($this->app, $this->dispatcher);
+        return $provider($this->getConfig(),$this->app, $this->dispatcher);
     }
 
     public function __set($name, $value)
@@ -43,10 +45,21 @@ class WeChatManager extends ArrayAccessAble
         }
     }
 
-    public function registerOfficialAccount()
+    public function setConfig($config)
+    {
+        $this->config = $config;
+    }
+
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    protected function registerOfficialAccount()
     {
         $provider = new OfficialAccountServiceProvider();
 
         $provider->register($this);
     }
+
 }
