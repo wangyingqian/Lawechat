@@ -8,8 +8,11 @@ class OfficialAccount
 {
     protected $app;
 
+    protected $dispatcher;
+
     public function __construct(Application $app, Dispatcher $dispatcher)
     {
         $this->app = $app;
+        $this->dispatcher = $dispatcher;
     }
 }

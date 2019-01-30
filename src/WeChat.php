@@ -5,10 +5,15 @@ use Illuminate\Container\Container;
 
 class WeChat
 {
+    private static $manager;
 
     public static function make($name, $config = null)
     {
-        return Container::getInstance()->make($name);
+        if (empty(self::$manager)){
+            self::$manager = Container::getInstance()->make('wechat.manager');
+        }
+
+        return self::$manager->$name;
     }
 
     public static function __callStatic($name, $arguments)

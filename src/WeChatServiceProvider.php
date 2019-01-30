@@ -15,10 +15,11 @@ class WeChatServiceProvider extends ServiceProvider
         });
     }
 
-    public function boot()
-    {
-        $weManager = $this->app->make('wechat.manager');
+//    public function boot()
+//    {
+//        $weManager = $this->app->make('wechat.manager');
+//
+//        $weManager->boot();
+//    }
 
-        $weManager->boot();
-    }
 }

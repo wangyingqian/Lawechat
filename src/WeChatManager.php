@@ -3,41 +3,49 @@ namespace Lawechat;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
-use Lawechat\OfficialAccount\OfficialAccount;
+use Lawechat\Kernel\Exception\NotAllowedWechatException;
+use Lawechat\OfficialAccount\OfficialAccountServiceProvider;
 
-class WeChatManager
+class WeChatManager extends \ArrayAccessible
 {
     protected $app;
 
     protected $dispatcher;
 
-    protected $wechat = [
-        'officialAccount' => OfficialAccount::class
-    ];
 
     public function __construct(Application $app, Dispatcher $dispatcher)
     {
         $this->app = $app;
         $this->dispatcher = $dispatcher;
+
+        parent::__construct();
     }
 
-    /**
-     * 注册微信相应服务
-     */
-    public function boot()
-    {
-        //注册核心服务
 
-        $this->register();
+    public function __get($name)
+    {
+        $this->{'register'.studly_case($name)}();
+
+        if (! $this->offsetExists($name)){
+            throw new NotAllowedWechatException('相应的微信服务加载失败');
+        }
+
+        $provider = $this->offsetGet($name);
+
+        return $provider($this->app, $this->dispatcher);
     }
 
-    protected function register()
+    public function __set($name, $value)
     {
-        foreach ($this->wechat as $contract => $concrete){
-            $this->app->singleton($contract, function () use ($concrete) {
-                return new $concrete($this->app, $this->dispatcher);
-            });
+        if (empty($this->offsetExists($name))){
+            $this->offsetSet($name, $value);
         }
     }
 
+    public function registerOfficialAccount()
+    {
+        $provider = new OfficialAccountServiceProvider();
+
+        $provider->register($this);
+    }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Lawechat\Kerner\Traits;
+namespace Lawechat\Kernel\Traits;
 
 use Illuminate\Events\Dispatcher;
 
