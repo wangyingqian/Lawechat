@@ -4,9 +4,10 @@ namespace Lawechat;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Foundation\Application;
 use Lawechat\Kernel\Exception\NotAllowedWechatException;
+use Lawechat\Kernel\Support\ArrayAccessAble;
 use Lawechat\OfficialAccount\OfficialAccountServiceProvider;
 
-class WeChatManager extends \ArrayAccessible
+class WeChatManager extends ArrayAccessAble
 {
     protected $app;
 

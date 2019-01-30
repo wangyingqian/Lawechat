@@ -1,7 +1,5 @@
 <?php
-namespace Lawechat\Kernel\Contract;
-
-
+namespace Lawechat\Kernel\Support\Contract;
 
 use Lawechat\WeChatManager;
 
