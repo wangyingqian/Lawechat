@@ -1,7 +1,7 @@
 <?php
 namespace Lawechat\OfficialAccount;
 
-use Lawechat\Kernel\Contract\ProviderServiceInterface;
+use Lawechat\Kernel\Supports\Contract\ProviderServiceInterface;
 use Lawechat\WeChatManager;
 
 

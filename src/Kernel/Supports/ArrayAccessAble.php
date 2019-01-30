@@ -1,5 +1,5 @@
 <?php
-namespace Lawechat\Kernel\Support;
+namespace Lawechat\Kernel\Supports;
 
 class ArrayAccessAble implements \ArrayAccess, \IteratorAggregate
 {
