@@ -2,10 +2,8 @@
 namespace Lawechat\OfficialAccount;
 
 use Illuminate\Contracts\Events\Dispatcher;
-
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Manager;
-use Lawechat\OfficialAccount\Menu;
 
 class OfficialAccount extends Manager
 {
@@ -26,7 +24,7 @@ class OfficialAccount extends Manager
 
     public function createMenuDriver()
     {
-        return Menu\Menu::class;
+        return new Menu\Menu();
     }
 
 
