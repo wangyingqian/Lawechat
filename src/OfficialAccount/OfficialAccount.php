@@ -5,6 +5,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Manager;
+use Lawechat\OfficialAccount\Menu;
 
 class OfficialAccount extends Manager
 {
@@ -21,12 +22,22 @@ class OfficialAccount extends Manager
         $this->dispatcher = $dispatcher;
 
         parent::__construct($this->app);
+    }
 
-        dd($this->config);
+    public function getMenuDriver()
+    {
+        return Menu\Menu::class;
+    }
+
+    public function getUserDriver()
+    {
+
     }
 
     public function getDefaultDriver()
     {
-        // TODO: Implement getDefaultDriver() method.
+
     }
+
+
 }
