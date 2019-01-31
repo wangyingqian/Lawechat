@@ -24,20 +24,20 @@ class OfficialAccount extends Manager
         parent::__construct($this->app);
     }
 
-    public function getMenuDriver()
+    public function createMenuDriver()
     {
         return Menu\Menu::class;
     }
 
-    public function getUserDriver()
-    {
-
-    }
 
     public function getDefaultDriver()
     {
 
     }
 
+    public function __get($name)
+    {
+       return $this->driver($name);
+    }
 
 }
